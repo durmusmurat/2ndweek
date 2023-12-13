@@ -1,0 +1,83 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class helloworld : MonoBehaviour
+{
+    void bolenleriBul(int ilksayi, int ikincisayi)
+    {
+        ArrayList Tümliste = new ArrayList();
+        ArrayList İkiyeBolunenler = new ArrayList();
+        ArrayList UceBolunenler = new ArrayList();
+        ArrayList DordeBolunenler = new ArrayList();
+        ArrayList BeseBolunenler = new ArrayList();
+
+        //Tüm liste oluşturulur
+        for (int i = ilksayi; i <= ikincisayi; i++)
+        {
+            Tümliste.Add(i);
+        }
+
+        //Listelerin içine sayıları yazdırmak için foreach fonksiyonu
+        foreach (int sayi in Tümliste)
+        {
+            if (sayi % 2 == 0)
+            {
+                İkiyeBolunenler.Add(sayi);
+            }
+
+            if (sayi % 3 == 0)
+            {
+                UceBolunenler.Add(sayi);
+            }
+            if (sayi % 4 == 0)
+            {
+                DordeBolunenler.Add(sayi);
+            }
+
+            if (sayi % 5 == 0)
+            {
+                BeseBolunenler.Add(sayi);
+            }
+        }
+        //Listedeki sayıları yanyana yazması için string'e dönüştür
+        string liste1 = "";
+        string liste2 = "";
+        string liste3 = "";
+        string liste4 = "";
+        string liste5 = "";
+
+        foreach (int eleman in Tümliste)
+        {
+            liste1 += " - " + eleman;
+        }
+        foreach (int eleman in İkiyeBolunenler)
+        {
+            liste2 += " - " + eleman;
+        }
+        foreach (int eleman in UceBolunenler)
+        {
+            liste3 += " - " + eleman;
+        }
+        foreach (int eleman in DordeBolunenler)
+        {
+            liste4 += " - " + eleman;
+        }
+        foreach (int eleman in BeseBolunenler)
+        {
+            liste5 += " - " + eleman;
+        }
+
+        // sonuçları yazdırıyoruz
+        print("Tüm liste: " + liste1);
+        print("İkiye bölünenler: " + liste2);
+        print("Üçe bölünenler: " + liste3);
+        print("Dörde bölünenler: " + liste4);
+        print("Beşe bölünenler: " + liste5);
+    }
+
+    void Start()
+    {
+        bolenleriBul(20, 40);
+    }
+}
