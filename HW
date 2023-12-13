@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//MURAT DURMUS
 public class helloworld : MonoBehaviour
 {
     void bolenleriBul(int ilksayi, int ikincisayi)
